@@ -1,5 +1,6 @@
 com\brayanlolv\meca\telas\Inicial$2.class
 com\brayanlolv\meca\telas\cliente\ClienteCadastro$2.class
+com\brayanlolv\meca\telas\cliente\DatalhesCliente.class
 com\brayanlolv\meca\telas\cliente\ClienteGeral$4.class
 EntityManagerUtil.class
 com\brayanlolv\meca\telas\cliente\ClienteGeral$7.class
@@ -13,6 +14,7 @@ com\brayanlolv\meca\telas\cliente\ClienteCadastro.class
 com\brayanlolv\meca\model\Carro.class
 com\brayanlolv\meca\telas\carro\CarroHome.class
 com\brayanlolv\meca\telas\cliente\ClienteGeral$3.class
+com\brayanlolv\meca\telas\cliente\DatalhesCliente$2.class
 com\brayanlolv\meca\telas\Inicial$3.class
 com\brayanlolv\meca\controller\ClienteController.class
 com\brayanlolv\meca\telas\Inicial$1.class
@@ -22,6 +24,8 @@ com\brayanlolv\meca\dao\GenericDao.class
 com\brayanlolv\meca\telas\cliente\ClienteGeral$6.class
 com\brayanlolv\meca\model\Cliente.class
 com\brayanlolv\meca\telas\cliente\ClienteCadastro$4.class
+ClienteDetalhesEEditar\ClienteDetalhesEEditar.class
+com\brayanlolv\meca\telas\cliente\DatalhesCliente$1.class
 com\brayanlolv\meca\telas\cliente\ClienteGeral$1.class
 com\brayanlolv\meca\telas\Inicial.class
 com\brayanlolv\meca\telas\cliente\ClienteCadastro$1.class

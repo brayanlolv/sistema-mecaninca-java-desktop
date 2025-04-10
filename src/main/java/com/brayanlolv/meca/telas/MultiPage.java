@@ -8,12 +8,9 @@ package com.brayanlolv.meca.telas;
  *
  * @author braiu
  */
-import com.brayanlolv.meca.telas.cliente.ClienteGeral;
-import com.brayanlolv.meca.telas.cliente.ClienteCadastro;
+import com.brayanlolv.meca.telas.cliente.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import com.brayanlolv.meca.telas.*;
 
 public class MultiPage {
@@ -26,6 +23,7 @@ public class MultiPage {
     }
   
     public static ClienteGeral telaClienteGeral = new ClienteGeral() ;
+    public static DatalhesCliente telaDetalhesCliente = new DatalhesCliente();
     
     public MultiPage() {
         frame = new JFrame("Sistema mecanica");
@@ -38,6 +36,7 @@ public class MultiPage {
         mainPanel.add(new Inicial(), "home");
         mainPanel.add(telaClienteGeral, "clienteHome");
         mainPanel.add(new ClienteCadastro(), "clienteCadastro");
+        mainPanel.add(telaDetalhesCliente, "clienteDetalhes");
         frame.add(mainPanel);
         frame.setVisible(true);
     }

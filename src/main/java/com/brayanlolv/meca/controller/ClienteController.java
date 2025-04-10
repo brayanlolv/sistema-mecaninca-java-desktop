@@ -13,6 +13,11 @@ public class ClienteController {
         new ClienteDAO().salvar(cliente);
     }
     
+      public Cliente pegarClientePor(String campo, String valor){
+            return new ClienteDAO().findByParam(campo, valor);
+        
+    }
+    
     public String[] procurarPor(String campo, String valor){
         Cliente cliente = new ClienteDAO().findByParam(campo, valor);
         if(cliente == null){

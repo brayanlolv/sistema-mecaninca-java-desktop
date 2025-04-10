@@ -2,11 +2,7 @@ package com.brayanlolv.meca.telas.cliente;
 import com.brayanlolv.meca.controller.ClienteController;
 import com.brayanlolv.meca.model.Cliente;
 import com.brayanlolv.meca.telas.MultiPage;
-//import javax.swing.table.DefaultTableModel;
-//import java.awt.event.MouseAdapter;
-//import java.awt.event.MouseEvent;
-//import javax.swing.event.TableModelEvent;
-//import javax.swing.event.TableModelListener;
+
 
 public class ClienteGeral extends javax.swing.JPanel {
 
@@ -14,7 +10,6 @@ public class ClienteGeral extends javax.swing.JPanel {
     
     private  String [][] dados;
     private Cliente clienteBusca;
-    
     public  void atualizar(){
         dados = new ClienteController().getJTableMatrix();
         tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -209,8 +204,14 @@ public class ClienteGeral extends javax.swing.JPanel {
     }//GEN-LAST:event_filtrosTabelaTglActionPerformed
 
     private void tabelaClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaClientesMouseClicked
-          System.out.println(tabelaClientes.getSelectedRow());
-         System.out.println(tabelaClientes.isCellEditable(3, 1));
+          //System.out.println(c.getSelectedRow());
+         //System.out.println(tabelaClientes.isCellEditable(3, 1));
+         
+        MultiPage.telaDetalhesCliente.clienteCpf = dados[tabelaClientes.getSelectedRow()][3];
+        MultiPage.mudarTela("clienteDetalhes");
+        MultiPage.telaDetalhesCliente.atualizar();
+
+        
     }//GEN-LAST:event_tabelaClientesMouseClicked
 
 

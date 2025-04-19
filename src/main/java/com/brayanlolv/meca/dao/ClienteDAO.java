@@ -4,11 +4,7 @@
  */
 package com.brayanlolv.meca.dao;
 import com.brayanlolv.meca.model.Cliente;
-/**
- *
- * @author braiu
- */
-//tavez tirar  seriazable possa dar merda
+
 public class ClienteDAO extends GenericDao<Cliente> {
 
     public void procurar(){
@@ -26,7 +22,11 @@ public class ClienteDAO extends GenericDao<Cliente> {
         return findByParam(campo,valor);
     }
     
-    public void excluir(String id) {
+    public void excluir(Cliente cliente) {
+        delete(cliente);
+    }
+    
+    public void excluir(int id) {
         Cliente c = findByParam("id",id);
         delete(c);
     }

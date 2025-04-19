@@ -9,6 +9,7 @@ package com.brayanlolv.meca.telas;
  * @author braiu
  */
 import com.brayanlolv.meca.telas.cliente.*;
+import com.brayanlolv.meca.telas.carro.*;
 import javax.swing.*;
 import java.awt.*;
 import com.brayanlolv.meca.telas.*;
@@ -22,8 +23,15 @@ public class MultiPage {
         return cardLayout;
     }
   
-    public static ClienteGeral telaClienteGeral = new ClienteGeral() ;
+    //funciona, mas nao é a forma correta, nao quero refatorar tudo, so quero deixar funcionando
+    //nao queria fazer esse projeto, so to fazendo ele pela faculdade
+    //queria estar estudando outras coisas
+    //nao tenha esse codigo exemplo de algo, essa é a pior forma possivel de usar variaveis statics
+    //sao estaticas e publicas para eu poder chamar o atualizar dessa mesma instancia em outras classes
+    //precisa ser assim porq  a arquitetura esta falha
+    public static ClienteGeral telaClienteGeral = new ClienteGeral();
     public static DatalhesCliente telaDetalhesCliente = new DatalhesCliente();
+    public static CarroGeral telaCarrosGeral = new CarroGeral();
     
     public MultiPage() {
         frame = new JFrame("Sistema mecanica");
@@ -37,6 +45,8 @@ public class MultiPage {
         mainPanel.add(telaClienteGeral, "clienteHome");
         mainPanel.add(new ClienteCadastro(), "clienteCadastro");
         mainPanel.add(telaDetalhesCliente, "clienteDetalhes");
+        mainPanel.add(telaCarrosGeral,"carroHome");
+        mainPanel.add(new CarroCadastro(),"carroCadastro");
         frame.add(mainPanel);
         frame.setVisible(true);
     }

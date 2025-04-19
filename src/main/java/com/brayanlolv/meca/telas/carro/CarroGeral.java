@@ -1,27 +1,28 @@
-package com.brayanlolv.meca.telas.cliente;
+package com.brayanlolv.meca.telas.carro;
+import com.brayanlolv.meca.telas.cliente.*;
 import com.brayanlolv.meca.controller.ClienteController;
-import com.brayanlolv.meca.model.Cliente;
+import com.brayanlolv.meca.model.Carro;
 import com.brayanlolv.meca.telas.MultiPage;
 
 
-public class ClienteGeral extends javax.swing.JPanel {
+public class CarroGeral extends javax.swing.JPanel {
 
    String selectOpcoes [] ={"documento","telefone"};
     
     private  String [][] dados;
-    private Cliente clienteBusca;
+    private Carro carroBusca;
     public  void atualizar(){
         dados = new ClienteController().getJTableMatrix();
         tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
             dados,
             new String [] {
-                "nome", "telefone"
+                "modelo", "placa"
             }
         ));
         
     }
     
-    public ClienteGeral() {
+    public CarroGeral() {
         initComponents();
         atualizar();
         painelBusca.setVisible(false);
@@ -55,7 +56,7 @@ public class ClienteGeral extends javax.swing.JPanel {
         painelFiltro = new javax.swing.JPanel();
         filtroTxtIpt = new javax.swing.JTextField();
         filtroSlct = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        menuInical = new javax.swing.JButton();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -64,8 +65,8 @@ public class ClienteGeral extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Clientes");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 165, 40));
+        jLabel1.setText("Carros");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 165, 40));
 
         tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
             dados,
@@ -88,10 +89,10 @@ public class ClienteGeral extends javax.swing.JPanel {
                 cadastrarBtnActionPerformed(evt);
             }
         });
-        add(cadastrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, 30));
+        add(cadastrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, 30));
         add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, -10, -1, -1));
 
-        PesquisarTgl.setText("Pesquisar Cliente");
+        PesquisarTgl.setText("pesquisar carros");
         PesquisarTgl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PesquisarTglActionPerformed(evt);
@@ -147,21 +148,21 @@ public class ClienteGeral extends javax.swing.JPanel {
 
         add(painelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 440, 40));
 
-        jButton1.setText("Menu Inicial");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        menuInical.setText("Menu Inicial");
+        menuInical.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                menuInicalActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        add(menuInical, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
-      MultiPage.mudarTela("clienteCadastro");
+      MultiPage.mudarTela("carroCadastro");
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 
     private void procurarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarBtn1ActionPerformed
-        System.out.println(PesquisarTgl.isSelected());
+        System.out.println(PesquisarTgl.isSelected());      
     }//GEN-LAST:event_procurarBtn1ActionPerformed
 
     private void PesquisarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisarTglActionPerformed
@@ -173,19 +174,14 @@ public class ClienteGeral extends javax.swing.JPanel {
     }//GEN-LAST:event_filtrosTabelaTglActionPerformed
 
     private void tabelaClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaClientesMouseClicked
-          //System.out.println(c.getSelectedRow());
-         //System.out.println(tabelaClientes.isCellEditable(3, 1));
-         
         MultiPage.telaDetalhesCliente.clienteCpf = dados[tabelaClientes.getSelectedRow()][3];
-        MultiPage.mudarTela("clienteDetalhes");
-        MultiPage.telaDetalhesCliente.atualizar();
-
-        
+        // MultiPage.mudarTela("clienteDetalhes");
+        //MultiPage.telaDetalhesCliente.atualizar();
     }//GEN-LAST:event_tabelaClientesMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void menuInicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuInicalActionPerformed
         MultiPage.mudarTela("home");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_menuInicalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -197,7 +193,6 @@ public class ClienteGeral extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> filtroSlct;
     private javax.swing.JTextField filtroTxtIpt;
     private javax.swing.JToggleButton filtrosTabelaTgl;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
@@ -209,7 +204,6 @@ public class ClienteGeral extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton menuInical;
-    private javax.swing.JButton menuInical1;
     private javax.swing.JPanel painelBusca;
     private javax.swing.JPanel painelFiltro;
     private javax.swing.JButton procurarBtn1;

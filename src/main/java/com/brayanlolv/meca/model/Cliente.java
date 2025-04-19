@@ -9,8 +9,14 @@ public class Cliente implements Serializable{
    @GeneratedValue(strategy = GenerationType.AUTO)
    private int id;
    
-   //@Column(nullable = false)
-   private String nome, email, documento, telefone;
+   @Column(nullable = false)
+   private String nome;
+   @Column(nullable = false)
+   private String email;
+   @Column(nullable = false)
+   private String documento; 
+   @Column(nullable = false)
+   private String telefone;
 
 
     public int getId() {

@@ -38,6 +38,17 @@ public class ClienteController {
         
     }
     
+    public void Modificar(Cliente cliente){
+        new ClienteDAO().alterar(cliente);
+    }
+    
+    public void apagar(int id){
+        new ClienteDAO().excluir(id);
+    }
+   
+    /*public void apagar(Cliente cliente){
+        new ClienteDAO().excluir(cliente);
+    }*/
     private String[] toStringArray(Cliente cliente){
         String[] dados = {cliente.getNome(),cliente.getEmail(),cliente.getTelefone(),cliente.getDocumento()};
         return dados;

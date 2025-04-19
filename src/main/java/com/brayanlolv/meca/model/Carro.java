@@ -12,7 +12,15 @@ public class Carro {
    
       
    @Column(nullable = false)
-   private String placa, ano, cor, observacoes, cliente_id;
+   private String placa;
+   @Column(nullable = false)
+   private String ano;
+   @Column(nullable = false)
+   private String cor;
+   @Column(nullable = false)
+   private String observacoes;
+   @Column(nullable = false)
+   private String cliente_id;
 
     public int getId() {
         return id;

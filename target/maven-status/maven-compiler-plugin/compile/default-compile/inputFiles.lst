@@ -1,12 +1,12 @@
-C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\ClienteDetalhesEEditar\ClienteDetalhesEEditar.java
+C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\controller\CarroController.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\controller\ClienteController.java
+C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\dao\CarroDAO.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\dao\ClienteDAO.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\dao\EntityManagerUtil.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\dao\GenericDao.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\Meca.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\model\Carro.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\model\Cliente.java
-C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\model\GenericController.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\telas\carro\CarroCadastro.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\telas\carro\CarroGeral.java
 C:\Users\braiu\Documents\NetBeansProjects\meca\src\main\java\com\brayanlolv\meca\telas\carro\CarroHome.java

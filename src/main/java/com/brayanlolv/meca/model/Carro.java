@@ -1,16 +1,19 @@
 package com.brayanlolv.meca.model;
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Entity
-public class Carro {
-
+public class Carro implements Serializable {
     
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    private int id;
    
-      
+   @Column(nullable = false)
+   private String modelo; 
+
+
    @Column(nullable = false)
    private String placa;
    @Column(nullable = false)
@@ -30,6 +33,14 @@ public class Carro {
         this.id = id;
     }
 
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+    
     public String getPlaca() {
         return placa;
     }

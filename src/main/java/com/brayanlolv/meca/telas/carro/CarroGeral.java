@@ -1,6 +1,6 @@
 package com.brayanlolv.meca.telas.carro;
 import com.brayanlolv.meca.telas.cliente.*;
-import com.brayanlolv.meca.controller.ClienteController;
+import com.brayanlolv.meca.controller.CarroController;
 import com.brayanlolv.meca.model.Carro;
 import com.brayanlolv.meca.telas.MultiPage;
 
@@ -12,8 +12,8 @@ public class CarroGeral extends javax.swing.JPanel {
     private  String [][] dados;
     private Carro carroBusca;
     public  void atualizar(){
-        dados = new ClienteController().getJTableMatrix();
-        tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
+        dados = new CarroController().getJTableMatrix();
+        tabelaCarros.setModel(new javax.swing.table.DefaultTableModel(
             dados,
             new String [] {
                 "modelo", "placa"
@@ -23,6 +23,7 @@ public class CarroGeral extends javax.swing.JPanel {
     }
     
     public CarroGeral() {
+        
         initComponents();
         atualizar();
         painelBusca.setVisible(false);
@@ -42,7 +43,7 @@ public class CarroGeral extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaClientes = new javax.swing.JTable();
+        tabelaCarros = new javax.swing.JTable();
         cadastrarBtn = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         PesquisarTgl = new javax.swing.JToggleButton();
@@ -68,18 +69,18 @@ public class CarroGeral extends javax.swing.JPanel {
         jLabel1.setText("Carros");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 165, 40));
 
-        tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaCarros.setModel(new javax.swing.table.DefaultTableModel(
             dados,
             new String [] {
                 "nome", "telefone"
             }
         ));
-        tabelaClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelaCarros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelaClientesMouseClicked(evt);
+                tabelaCarrosMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tabelaClientes);
+        jScrollPane1.setViewportView(tabelaCarros);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 355, 115));
 
@@ -173,11 +174,9 @@ public class CarroGeral extends javax.swing.JPanel {
        painelFiltro.setVisible(filtrosTabelaTgl.isSelected());
     }//GEN-LAST:event_filtrosTabelaTglActionPerformed
 
-    private void tabelaClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaClientesMouseClicked
-        MultiPage.telaDetalhesCliente.clienteCpf = dados[tabelaClientes.getSelectedRow()][3];
-        // MultiPage.mudarTela("clienteDetalhes");
-        //MultiPage.telaDetalhesCliente.atualizar();
-    }//GEN-LAST:event_tabelaClientesMouseClicked
+    private void tabelaCarrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaCarrosMouseClicked
+        MultiPage.telaDetalhesCliente.clienteCpf = dados[tabelaCarros.getSelectedRow()][3];
+    }//GEN-LAST:event_tabelaCarrosMouseClicked
 
     private void menuInicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuInicalActionPerformed
         MultiPage.mudarTela("home");
@@ -207,6 +206,6 @@ public class CarroGeral extends javax.swing.JPanel {
     private javax.swing.JPanel painelBusca;
     private javax.swing.JPanel painelFiltro;
     private javax.swing.JButton procurarBtn1;
-    private javax.swing.JTable tabelaClientes;
+    private javax.swing.JTable tabelaCarros;
     // End of variables declaration//GEN-END:variables
 }

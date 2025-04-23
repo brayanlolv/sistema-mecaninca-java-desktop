@@ -17,7 +17,7 @@ public class EntityManagerUtil {
 
 	public static EntityManager getEntityManager() {
 		if (emf == null){
-			emf = Persistence.createEntityManagerFactory("agenda");
+			emf = Persistence.createEntityManagerFactory("clientes");
 		}
 		return emf.createEntityManager();
 	}

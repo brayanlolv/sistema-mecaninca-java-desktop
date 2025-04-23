@@ -13,7 +13,7 @@ import java.util.List;
 //deixar sem throws para evitar dor de cabeca
 public class GenericDao <T extends Serializable> {
 
-    @PersistenceContext(unitName = "agenda")
+    @PersistenceContext(unitName = "clientes")
     private final EntityManager entityManager;
     private final Class<T> persistentClass;
 
@@ -21,13 +21,14 @@ public class GenericDao <T extends Serializable> {
     public GenericDao() {
         this.entityManager = EntityManagerUtil.getEntityManager();
         this.persistentClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+       
     }
 
     public EntityManager getEntityManager() {
         return entityManager;
     }
 
-    protected void save(T entity) {
+    public void salvar(T entity) {
         EntityTransaction tx = getEntityManager().getTransaction();
 
         try {
@@ -42,7 +43,7 @@ public class GenericDao <T extends Serializable> {
         }
     }
 
-    protected void update(T entity) {
+    public void alterar(T entity) {
         EntityTransaction tx = getEntityManager().getTransaction();
 
         try {
@@ -58,7 +59,7 @@ public class GenericDao <T extends Serializable> {
 
     }
 
-    protected void delete(T entity) {
+    public void apagar(T entity) {
         EntityTransaction tx = getEntityManager().getTransaction();
 
         try {
@@ -73,7 +74,7 @@ public class GenericDao <T extends Serializable> {
         }
     }
 
-    public List<T> findAll()  {
+    public List<T> listar()  {
         Session session = (Session) getEntityManager().getDelegate();
         return session.createCriteria(persistentClass).list();
     }

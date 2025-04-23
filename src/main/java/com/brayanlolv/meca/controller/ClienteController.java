@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.brayanlolv.meca.controller;
 import com.brayanlolv.meca.model.Cliente;
 import com.brayanlolv.meca.dao.ClienteDAO;
@@ -27,15 +23,15 @@ public class ClienteController {
     }
     
     public String[][] getJTableMatrix(){
-        List<Cliente> clientes = new ClienteDAO().findAll();
+        List<Cliente> clientes = new ClienteDAO().listar();
+       // List<Cliente> clientes = new ClienteDAO().findAll();
         String[][] dados = new String[clientes.size()][]  ;
         int i = 0;
         for(Cliente cliente: clientes){
             dados[i] = toStringArray(cliente);
             i++;
         }
-        return dados;
-        
+        return dados;  
     }
     
     public void Modificar(Cliente cliente){
@@ -43,12 +39,12 @@ public class ClienteController {
     }
     
     public void apagar(int id){
-        new ClienteDAO().excluir(id);
+        ClienteDAO cDAO = new ClienteDAO(); 
+        Cliente c = cDAO.findByParam("id",id);
+        cDAO.apagar(c);
     }
    
-    /*public void apagar(Cliente cliente){
-        new ClienteDAO().excluir(cliente);
-    }*/
+  
     private String[] toStringArray(Cliente cliente){
         String[] dados = {cliente.getNome(),cliente.getEmail(),cliente.getTelefone(),cliente.getDocumento()};
         return dados;

@@ -163,9 +163,10 @@ public class DatalhesCliente extends javax.swing.JPanel {
         cliente.setDocumento(cpfTxt.getText());
         cliente.setEmail(emailTxt.getText());
         cliente.setTelefone(telefoneTxt.getText());
-        new ClienteController().Modificar(cliente);
+        new ClienteController().modificar(cliente);
         atualizar();
         MultiPage.telaClienteGeral.atualizar();
+        MultiPage.mudarTela("clienteHome");
     }//GEN-LAST:event_SalvarBtnActionPerformed
 
     private void excluirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirBtnActionPerformed

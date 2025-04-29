@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+
 //deixar sem throws para evitar dor de cabeca
 public class GenericDao <T extends Serializable> {
 

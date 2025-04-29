@@ -28,10 +28,12 @@ public class MultiPage {
     //queria estar estudando outras coisas
     //nao tenha esse codigo exemplo de algo, essa é a pior forma possivel de usar variaveis statics
     //sao estaticas e publicas para eu poder chamar o atualizar dessa mesma instancia em outras classes
-    //precisa ser assim porq  a arquitetura esta falha
+    //precisa ser assim porq  a arquitetura esta falha]
+    
     public static ClienteGeral telaClienteGeral = new ClienteGeral();
     public static DatalhesCliente telaDetalhesCliente = new DatalhesCliente();
     public static CarroGeral telaCarrosGeral = new CarroGeral();
+    public static DatalhesCarro telaDetalhesCarro = new DatalhesCarro();
     
     public MultiPage() {
         frame = new JFrame("Sistema mecanica");
@@ -47,6 +49,7 @@ public class MultiPage {
         mainPanel.add(telaDetalhesCliente, "clienteDetalhes");
         mainPanel.add(telaCarrosGeral,"carroHome");
         mainPanel.add(new CarroCadastro(),"carroCadastro");
+        mainPanel.add(telaDetalhesCarro,"carroDetalhes"); 
         frame.add(mainPanel);
         frame.setVisible(true);
     }

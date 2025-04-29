@@ -175,7 +175,10 @@ public class CarroGeral extends javax.swing.JPanel {
     }//GEN-LAST:event_filtrosTabelaTglActionPerformed
 
     private void tabelaCarrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaCarrosMouseClicked
-        MultiPage.telaDetalhesCliente.clienteCpf = dados[tabelaCarros.getSelectedRow()][3];
+        MultiPage.telaDetalhesCarro.carroPlaca = dados[tabelaCarros.getSelectedRow()][1];
+        MultiPage.telaDetalhesCarro.atualizar();
+        System.out.println(dados[tabelaCarros.getSelectedRow()][1]);
+        MultiPage.mudarTela("carroDetalhes");
     }//GEN-LAST:event_tabelaCarrosMouseClicked
 
     private void menuInicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuInicalActionPerformed

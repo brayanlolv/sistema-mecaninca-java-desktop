@@ -34,7 +34,7 @@ public class ClienteController {
         return dados;  
     }
     
-    public void Modificar(Cliente cliente){
+    public void modificar(Cliente cliente){
         new ClienteDAO().alterar(cliente);
     }
     

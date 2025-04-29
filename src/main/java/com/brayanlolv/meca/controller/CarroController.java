@@ -9,7 +9,7 @@ public class CarroController {
         new CarroDAO().salvar(carro);
     }
 //    
-     public Carro pegarCarroPor(String campo, String valor){;;
+     public Carro pegarCarroPor(String campo, String valor){
             return new CarroDAO().findByParam(campo, valor);
     }
 //     

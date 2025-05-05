@@ -3,7 +3,8 @@
 
     <persistence-unit name="clientes" transaction-type="RESOURCE_LOCAL">
         <class>com.brayanlolv.meca.model.Cliente</class>
-        <class>com.brayanlolv.meca.model.Carro</class>
+        <class>com.brayanlolv.meca.model.Carro</class> 
+        <class>com.brayanlolv.meca.model.OS</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:hsqldb:file:db/agenda"/>
             <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>

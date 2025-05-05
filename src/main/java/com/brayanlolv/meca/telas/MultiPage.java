@@ -10,6 +10,7 @@ package com.brayanlolv.meca.telas;
  */
 import com.brayanlolv.meca.telas.cliente.*;
 import com.brayanlolv.meca.telas.carro.*;
+import com.brayanlolv.meca.telas.OS.*;
 import javax.swing.*;
 import java.awt.*;
 import com.brayanlolv.meca.telas.*;
@@ -32,8 +33,12 @@ public class MultiPage {
     
     public static ClienteGeral telaClienteGeral = new ClienteGeral();
     public static DatalhesCliente telaDetalhesCliente = new DatalhesCliente();
+    
     public static CarroGeral telaCarrosGeral = new CarroGeral();
     public static DatalhesCarro telaDetalhesCarro = new DatalhesCarro();
+    
+    public static OSGeral telaOrdemGeral = new OSGeral();
+    public static OSDetalhes telaOrdemDetalhes = new OSDetalhes();
     
     public MultiPage() {
         frame = new JFrame("Sistema mecanica");
@@ -44,12 +49,19 @@ public class MultiPage {
         
         // Add pages to the main panel
         mainPanel.add(new Inicial(), "home");
+        
         mainPanel.add(telaClienteGeral, "clienteHome");
         mainPanel.add(new ClienteCadastro(), "clienteCadastro");
         mainPanel.add(telaDetalhesCliente, "clienteDetalhes");
+ 
         mainPanel.add(telaCarrosGeral,"carroHome");
         mainPanel.add(new CarroCadastro(),"carroCadastro");
         mainPanel.add(telaDetalhesCarro,"carroDetalhes"); 
+        
+        mainPanel.add(telaOrdemGeral,"ordemHome");
+        mainPanel.add(telaOrdemDetalhes,"ordemDetalhes");
+        mainPanel.add(new OSCadastro(),"ordemCadastro");
+        
         frame.add(mainPanel);
         frame.setVisible(true);
     }

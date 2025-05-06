@@ -121,14 +121,19 @@ public class CarroCadastro extends javax.swing.JPanel {
     private void SalvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtnActionPerformed
         Carro carro = new Carro();
         carro.setAno(anoIpt.getText());
-        carro.setModelo(anoIpt.getText());
+        carro.setModelo(modeloIpt1.getText());
         carro.setCor(corIpt.getText());
         carro.setPlaca(placaIpt.getText());
         carro.setObservacoes(observacoesIpt.getText());
-        carro.setCliente_id("asd");
-        new CarroController().cadastrar(carro);
+        new CarroController().cadastrar(carro, clienteCpfIpt.getText());
         MultiPage.telaCarrosGeral.atualizar();
         MultiPage.mudarTela("carroHome");  
+        
+        anoIpt.setText("");
+        modeloIpt1.setText("");
+        corIpt.setText("");
+        placaIpt.setText("");
+        observacoesIpt.setText("");
     }//GEN-LAST:event_SalvarBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

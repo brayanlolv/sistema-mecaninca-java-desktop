@@ -1,12 +1,16 @@
 package com.brayanlolv.meca.controller;
+
 import com.brayanlolv.meca.model.OS;
+import com.brayanlolv.meca.model.Carro;
 import com.brayanlolv.meca.dao.OSDAO;
 import java.util.List;
 
 public class OSController {
     
-    public void cadastrar(OS cliente){
-        new OSDAO().salvar(cliente);
+    public void cadastrar(OS os,String placaCarro){
+        Carro carro = new CarroController().pegarCarroPor("placa", placaCarro);
+        os.setCarro(carro);
+        new OSDAO().salvar(os);
     }
     
       public OS pegarOrdemPor(String campo, String valor){

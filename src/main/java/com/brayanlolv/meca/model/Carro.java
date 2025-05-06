@@ -22,8 +22,18 @@ public class Carro implements Serializable {
    private String cor;
    @Column(nullable = false)
    private String observacoes;
-   @Column(nullable = false)
-   private String cliente_id;
+   
+    @ManyToOne
+    private Cliente cliente;
+    // private int cliente_id;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public int getId() {
         return id;
@@ -73,13 +83,14 @@ public class Carro implements Serializable {
         this.observacoes = observacoes;
     }
 
-    public String getCliente_id() {
-        return cliente_id;
-    }
-
-    public void setCliente_id(String cliente_id) {
-        this.cliente_id = cliente_id;
-    }
+//
+//    public int getCliente_id() {
+//        return cliente_id;
+//    }
+//
+//    public void setCliente_id(int cliente_id) {
+//        this.cliente_id = cliente_id;
+//    }
     
    
 }

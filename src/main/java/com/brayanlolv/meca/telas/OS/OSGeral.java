@@ -161,7 +161,7 @@ public class OSGeral extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
-      MultiPage.mudarTela("carroCadastro");
+      MultiPage.mudarTela("ordemCadastro");
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 
     private void procurarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarBtn1ActionPerformed

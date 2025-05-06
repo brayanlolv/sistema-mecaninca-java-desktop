@@ -17,32 +17,28 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="SalvarBtn" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
-                      <Component id="SalvarBtn" min="-2" pref="169" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                      <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="corIpt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="valorIpt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="observacoesIpt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="placacarroIpt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="placaIpt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="descricaoIpt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="clienteCpfIpt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="modeloIpt1" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="tituloIpt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="anoIpt" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="dataIpt" min="-2" pref="220" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="220" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
+              <EmptySpace pref="199" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,28 +51,24 @@
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-              <Component id="modeloIpt1" min="-2" max="-2" attributes="0"/>
+              <Component id="tituloIpt" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="placaIpt" pref="25" max="32767" attributes="0"/>
+              <Component id="descricaoIpt" pref="25" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="anoIpt" min="-2" max="-2" attributes="0"/>
+              <Component id="dataIpt" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="corIpt" min="-2" max="-2" attributes="0"/>
+              <Component id="valorIpt" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="observacoesIpt" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="clienteCpfIpt" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="placacarroIpt" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               <Component id="SalvarBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
           </Group>
@@ -86,31 +78,31 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ano"/>
+        <Property name="text" type="java.lang.String" value="data"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="anoIpt">
+    <Component class="javax.swing.JTextField" name="dataIpt">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="placa"/>
+        <Property name="text" type="java.lang.String" value="descricao"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="placaIpt">
+    <Component class="javax.swing.JTextField" name="descricaoIpt">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="observacoes"/>
+        <Property name="text" type="java.lang.String" value="placa carro"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="observacoesIpt">
+    <Component class="javax.swing.JTextField" name="placacarroIpt">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="cor"/>
+        <Property name="text" type="java.lang.String" value="valor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="corIpt">
+    <Component class="javax.swing.JTextField" name="valorIpt">
     </Component>
     <Component class="javax.swing.JButton" name="SalvarBtn">
       <Properties>
@@ -120,18 +112,11 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalvarBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="cpf cliente"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="clienteCpfIpt">
-    </Component>
-    <Component class="javax.swing.JTextField" name="modeloIpt1">
+    <Component class="javax.swing.JTextField" name="tituloIpt">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="modelo"/>
+        <Property name="text" type="java.lang.String" value="titulo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">

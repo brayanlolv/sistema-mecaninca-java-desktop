@@ -2,11 +2,15 @@
 package com.brayanlolv.meca.controller;
 import com.brayanlolv.meca.dao.CarroDAO;
 import com.brayanlolv.meca.model.Carro;
+import com.brayanlolv.meca.model.Cliente;
+
 import java.util.List;
 public class CarroController {
         
-    public void cadastrar(Carro carro){;
-        new CarroDAO().salvar(carro);
+    public void cadastrar(Carro carro,String documento){;
+    Cliente cliente = new ClienteController().pegarClientePor("documento", documento);
+    carro.setCliente(cliente);
+    new CarroDAO().salvar(carro);
     }
 //    
      public Carro pegarCarroPor(String campo, String valor){

@@ -1,4 +1,4 @@
-package com.brayanlolv.meca.model;
+ package com.brayanlolv.meca.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -9,12 +9,7 @@ public class OS implements Serializable {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    private int id;
-   
-//    ordem de servico
-//descricao servico
 
-//data
-//valor
    
    @Column(nullable = false)
    private String titulo; 
@@ -29,9 +24,22 @@ public class OS implements Serializable {
    @Column(nullable = false)
    private double valor;
 
+   @ManyToOne
+//    @Column(nullable = false)
+   private Carro carro;
+
+    public Carro getCarro() {
+        return carro;
+    }
+
+    public void setCarro(Carro carro) {
+        this.carro = carro;
+    }
+  
    
-   @Column(nullable = false)
-   private int carro_id;
+   
+//   @Column(nullable = false)
+//   private int carro_id;
 
     public int getId() {
         return id;
@@ -73,13 +81,13 @@ public class OS implements Serializable {
         this.valor = valor;
     }
 
-    public int getCarro_id() {
-        return carro_id;
-    }
-
-    public void setCarro_id(int carro_id) {
-        this.carro_id = carro_id;
-    }
+//    public int getCarro_id() {
+//        return carro_id;
+//    }
+//
+//    public void setCarro_id(int carro_id) {
+//        this.carro_id = carro_id;
+//    }
 
    
     

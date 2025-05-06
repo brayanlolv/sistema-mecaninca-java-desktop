@@ -32,32 +32,15 @@ public class ClienteCadastro extends javax.swing.JPanel {
         emailIpt = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         SalvarBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setText("nome");
 
-        nomeIpt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeIptActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("documento");
-
-        documentoIpt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                documentoIptActionPerformed(evt);
-            }
-        });
 
         jLabel3.setText("telefone");
 
         jLabel4.setText("email");
-
-        emailIpt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailIptActionPerformed(evt);
-            }
-        });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"CPF","CNPJ" }));
 
@@ -65,6 +48,13 @@ public class ClienteCadastro extends javax.swing.JPanel {
         SalvarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalvarBtnActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -88,13 +78,18 @@ public class ClienteCadastro extends javax.swing.JPanel {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(184, 184, 184)
-                        .addComponent(SalvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(SalvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jButton1)))
                 .addContainerGap(151, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(13, 13, 13)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nomeIpt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -118,18 +113,16 @@ public class ClienteCadastro extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nomeIptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeIptActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeIptActionPerformed
-
-    private void documentoIptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_documentoIptActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_documentoIptActionPerformed
-
-    private void emailIptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailIptActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailIptActionPerformed
-
+    
+    
+    
+    
+    private void resetarCampos(){
+        nomeIpt.setText("");
+        emailIpt.setText("");
+        documentoIpt.setText("");
+        telefoneIpt.setText("");
+    }
     private void SalvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtnActionPerformed
         Cliente novoCliente = new Cliente();
         novoCliente.setNome(nomeIpt.getText());
@@ -140,16 +133,22 @@ public class ClienteCadastro extends javax.swing.JPanel {
         new ClienteController().cadastrar(novoCliente);
  
         MultiPage.mudarTela("clienteHome");
+        resetarCampos();
         MultiPage.telaClienteGeral.atualizar();
-        MultiPage.telaClienteGeral.repaint();
-        
+        MultiPage.telaClienteGeral.repaint();       
     }//GEN-LAST:event_SalvarBtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        MultiPage.mudarTela("clienteHome");
+        resetarCampos();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton SalvarBtn;
     private javax.swing.JTextField documentoIpt;
     private javax.swing.JTextField emailIpt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

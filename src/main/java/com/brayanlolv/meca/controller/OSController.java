@@ -7,8 +7,9 @@ import java.util.List;
 
 public class OSController {
     
-    public void cadastrar(OS os,String placaCarro){
+    public void cadastrar(OS os,String placaCarro) throws Exception{
         Carro carro = new CarroController().pegarCarroPor("placa", placaCarro);
+        if(carro == null){throw new Exception("carro não encontrado, certifique se dele estar cadastrado ou da sua placa estar certa");}
         os.setCarro(carro);
         new OSDAO().salvar(os);
     }
@@ -47,7 +48,6 @@ public class OSController {
         cDAO.apagar(c);
     }
    
-  
     private String[] toStringArray(OS cliente){
         String[] dados ={}; //{cliente.getNome(),cliente.getEmail(),cliente.getTelefone(),cliente.getDocumento()};
         return dados;

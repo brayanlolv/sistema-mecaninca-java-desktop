@@ -3,11 +3,21 @@ package com.brayanlolv.meca.telas.carro;
 import com.brayanlolv.meca.controller.CarroController;
 import com.brayanlolv.meca.model.Carro;
 import com.brayanlolv.meca.telas.MultiPage;
+import com.brayanlolv.meca.telas.PopUp;
 
 public class CarroCadastro extends javax.swing.JPanel {
 
     public CarroCadastro() {
         initComponents();
+    }
+    
+    public void resetarCampos(){
+        anoIpt.setText("");
+        modeloIpt1.setText("");
+        corIpt.setText("");
+        placaIpt.setText("");
+        observacoesIpt.setText("");
+        clienteCpfIpt.setText("");
     }
 
     @SuppressWarnings("unchecked")
@@ -67,7 +77,7 @@ public class CarroCadastro extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1)
-                        .addGap(145, 145, 145)
+                        .addGap(74, 74, 74)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(corIpt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -81,7 +91,7 @@ public class CarroCadastro extends javax.swing.JPanel {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(anoIpt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,25 +129,27 @@ public class CarroCadastro extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtnActionPerformed
-        Carro carro = new Carro();
-        carro.setAno(anoIpt.getText());
-        carro.setModelo(modeloIpt1.getText());
-        carro.setCor(corIpt.getText());
-        carro.setPlaca(placaIpt.getText());
-        carro.setObservacoes(observacoesIpt.getText());
-        new CarroController().cadastrar(carro, clienteCpfIpt.getText());
-        MultiPage.telaCarrosGeral.atualizar();
-        MultiPage.mudarTela("carroHome");  
-        
-        anoIpt.setText("");
-        modeloIpt1.setText("");
-        corIpt.setText("");
-        placaIpt.setText("");
-        observacoesIpt.setText("");
+        try{
+            Carro carro = new Carro();
+            carro.setAno(anoIpt.getText());
+            carro.setModelo(modeloIpt1.getText());
+            carro.setCor(corIpt.getText());
+            carro.setPlaca(placaIpt.getText());
+            carro.setObservacoes(observacoesIpt.getText());
+            new CarroController().cadastrar(carro, clienteCpfIpt.getText());
+            MultiPage.telaCarrosGeral.atualizar();
+            MultiPage.mudarTela("carroHome");  
+            resetarCampos();
+           
+        }catch(Exception e){
+            PopUp.main(e.getMessage());
+        }
     }//GEN-LAST:event_SalvarBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
         MultiPage.mudarTela("carroHome");
+        resetarCampos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

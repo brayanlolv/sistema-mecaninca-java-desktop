@@ -4,6 +4,7 @@ import com.brayanlolv.meca.controller.OSController;
 import com.brayanlolv.meca.model.Carro;
 import com.brayanlolv.meca.model.OS;
 import com.brayanlolv.meca.telas.MultiPage;
+import com.brayanlolv.meca.telas.PopUp;
 
 public class OSCadastro extends javax.swing.JPanel {
 
@@ -108,20 +109,36 @@ public class OSCadastro extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SalvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtnActionPerformed
-        //OS = ordem de servico
-        OS os = new OS();
+    public void resetarCampos(){
+        tituloIpt.setText("");
+        descricaoIpt.setText("");
+        valorIpt.setText("");
+        dataIpt.setText("");
+        placacarroIpt.setText("");
         
-        os.setTitulo(tituloIpt.getText());
-        os.setDescricao(descricaoIpt.getText());
-        os.setValor(Float.parseFloat(valorIpt.getText()));
-        os.setData(dataIpt.getText());
-        new OSController().cadastrar(os,placacarroIpt.getText());
+    }
+    
+    private void SalvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtnActionPerformed
+        try{
+            //OS = ordem de servico
+            OS os = new OS();
+
+            os.setTitulo(tituloIpt.getText());
+            os.setDescricao(descricaoIpt.getText());
+            os.setValor(Float.parseFloat(valorIpt.getText()));
+            os.setData(dataIpt.getText());
+            new OSController().cadastrar(os,placacarroIpt.getText());
+            MultiPage.mudarTela("ordemHome");
+            resetarCampos();
+        }catch(Exception e){
+            PopUp.main(e.getMessage());
+        }
      
     }//GEN-LAST:event_SalvarBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         MultiPage.mudarTela("ordemHome");
+        resetarCampos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

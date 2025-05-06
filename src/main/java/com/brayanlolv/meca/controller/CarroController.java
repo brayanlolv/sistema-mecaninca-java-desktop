@@ -7,11 +7,12 @@ import com.brayanlolv.meca.model.Cliente;
 import java.util.List;
 public class CarroController {
         
-    public void cadastrar(Carro carro,String documento){;
-    Cliente cliente = new ClienteController().pegarClientePor("documento", documento);
-    carro.setCliente(cliente);
-    new CarroDAO().salvar(carro);
-    }
+    public void cadastrar(Carro carro,String documento)throws Exception {
+        Cliente cliente = new ClienteController().pegarClientePor("documento", documento);
+        if (cliente == null ){ throw new Exception("cliente nao encontrado,certifique se dele estar cadastrado");}
+        carro.setCliente(cliente);
+        new CarroDAO().salvar(carro);
+        }
 //    
      public Carro pegarCarroPor(String campo, String valor){
             return new CarroDAO().findByParam(campo, valor);

@@ -2,7 +2,8 @@ package com.brayanlolv.meca.telas.cliente;
 import com.brayanlolv.meca.model.Cliente;
 import com.brayanlolv.meca.controller.ClienteController;
 import com.brayanlolv.meca.telas.MultiPage;
-/* Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+/* Click nbfs://nbhost/SystemFileSyst
+em/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
@@ -21,6 +22,8 @@ public class DatalhesCliente extends javax.swing.JPanel {
         emailTxt.setText(cliente.getEmail());
         cpfTxt.setText(cliente.getDocumento());
         telefoneTxt.setText(cliente.getTelefone());
+        editarTgl.setSelected(false);
+        setEdicoesAtivas();
     }
     
     public DatalhesCliente() {
@@ -145,13 +148,17 @@ public class DatalhesCliente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTglActionPerformed
+    private void setEdicoesAtivas(){
         excluirBtn.setVisible(editarTgl.isSelected());
         SalvarBtn.setVisible(editarTgl.isSelected());
         nomeTxt.setEnabled(editarTgl.isSelected());
         cpfTxt.setEnabled(editarTgl.isSelected());
         emailTxt.setEnabled(editarTgl.isSelected());
         telefoneTxt.setEnabled(editarTgl.isSelected());
+    }
+    
+    private void editarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTglActionPerformed
+        setEdicoesAtivas();
     }//GEN-LAST:event_editarTglActionPerformed
 
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed

@@ -19,6 +19,14 @@ public class OSController {
         
     }
     
+    public OS pegarPorId( String valor){
+        return  new OSDAO().findByParam("id",Integer.parseInt(valor));
+        
+    }
+      
+    
+    
+    
     public String[] procurarPor(String campo, String valor){
         OS os = new OSDAO().findByParam(campo, valor);
         if(os == null){
@@ -48,8 +56,14 @@ public class OSController {
         cDAO.apagar(c);
     }
    
-    private String[] toStringArray(OS cliente){
-        String[] dados ={}; //{cliente.getNome(),cliente.getEmail(),cliente.getTelefone(),cliente.getDocumento()};
+    private String[] toStringArray(OS os){
+        String[] dados = {
+            os.getTitulo(),
+            os.getDescricao(),
+            os.getData(),
+            Integer.toString(os.getId())
+        };
+        //{cliente.getNome(),cliente.getEmail(),cliente.getTelefone(),cliente.getDocumento()};
         return dados;
     }
     

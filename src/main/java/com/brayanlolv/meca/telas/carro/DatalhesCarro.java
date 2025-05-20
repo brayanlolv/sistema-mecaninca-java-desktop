@@ -19,6 +19,8 @@ public class DatalhesCarro extends javax.swing.JPanel {
         observacoesTxt.setText(carro.getObservacoes());
 //        System.out.println(carroPlaca);
 //        System.out.print(carro == null);
+        editarTgl.setSelected(false);
+        setEditavel();
     }
     
     public DatalhesCarro() {
@@ -158,13 +160,18 @@ public class DatalhesCarro extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTglActionPerformed
+    private void setEditavel(){
         excluirBtn.setVisible(editarTgl.isSelected());
         SalvarBtn.setVisible(editarTgl.isSelected());
         modeloTxt.setEnabled(editarTgl.isSelected());
         placaTxt.setEnabled(editarTgl.isSelected());
         anoTxt.setEnabled(editarTgl.isSelected());
         corTxt.setEnabled(editarTgl.isSelected());
+        observacoesTxt.setEnabled(editarTgl.isSelected());
+    }
+    
+    private void editarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTglActionPerformed
+       setEditavel();
     }//GEN-LAST:event_editarTglActionPerformed
 
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed

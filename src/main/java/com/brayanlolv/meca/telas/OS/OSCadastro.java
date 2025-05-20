@@ -129,6 +129,7 @@ public class OSCadastro extends javax.swing.JPanel {
             os.setData(dataIpt.getText());
             new OSController().cadastrar(os,placacarroIpt.getText());
             MultiPage.mudarTela("ordemHome");
+            MultiPage.telaOrdemGeral.atualizar();
             resetarCampos();
         }catch(Exception e){
             PopUp.main(e.getMessage());

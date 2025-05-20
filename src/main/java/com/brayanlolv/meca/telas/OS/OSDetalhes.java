@@ -9,20 +9,22 @@ import com.brayanlolv.meca.telas.MultiPage;
 public class OSDetalhes extends javax.swing.JPanel {
 
     private Carro carro;
-    private OS ordemServico;
+    private OS os;
 
     
     
     public void atualizar(String id){
-       ordemServico = new OSController().pegarOrdemPor("id",id);
-//        System.out.print("carro pego"+ carro);
-        tituloTxt.setText(carro.getModelo());
-        descricaoTxt.setText(carro.getPlaca());
-        dataTxt.setText(carro.getCor());
-        valorTxt.setText(carro.getAno());
-        placaTxt.setText(carro.getObservacoes());
-//        System.out.println(carroPlaca);
-//        System.out.print(carro == null);
+        os = new OSController().pegarPorId(id);
+        System.out.println("ndjfghsjdhgkjdfhgjkdf");
+        System.out.println(os.getId());
+        tituloTxt.setText(os.getTitulo());
+        descricaoTxt.setText(os.getDescricao());
+        dataTxt.setText(os.getData());
+        valorTxt.setText(Double.toString(os.getValor()));
+        //placaTxt.setText(carro.getObservacoes());
+        
+        editarTgl.setSelected(false);
+        setEditavel();
     }
     
     public OSDetalhes() {
@@ -166,34 +168,39 @@ public class OSDetalhes extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTglActionPerformed
+    private void setEditavel(){
         excluirBtn.setVisible(editarTgl.isSelected());
         SalvarBtn.setVisible(editarTgl.isSelected());
         tituloTxt.setEnabled(editarTgl.isSelected());
         descricaoTxt.setEnabled(editarTgl.isSelected());
         valorTxt.setEnabled(editarTgl.isSelected());
         dataTxt.setEnabled(editarTgl.isSelected());
+    }
+    
+    private void editarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTglActionPerformed
+       setEditavel();
     }//GEN-LAST:event_editarTglActionPerformed
 
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
-        MultiPage.mudarTela("carroHome");
+        MultiPage.mudarTela("ordemHome");
     }//GEN-LAST:event_voltarBtnActionPerformed
 
     private void SalvarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtnActionPerformed
-          carro.setModelo(tituloTxt.getText());
-          carro.setPlaca(descricaoTxt.getText());
-          carro.setCor(dataTxt.getText());
-          carro.setAno(valorTxt.getText());
-          carro.setObservacoes(placaTxt.getText());
+           os.setTitulo(tituloTxt.getText());
+           os.setDescricao(descricaoTxt.getText());
+           os.setData(dataTxt.getText());
+           os.setValor(Float.parseFloat(valorTxt.getText()));
+           
+        
           new CarroController().modificar(carro);
-          atualizar(Integer.toString(ordemServico.getId()));
+          atualizar(Integer.toString(os.getId()));
           MultiPage.telaCarrosGeral.atualizar();
 //        MultiPage.mudarTela("carroGeral");
     }//GEN-LAST:event_SalvarBtnActionPerformed
 
     private void excluirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirBtnActionPerformed
         new CarroController().apagar(carro.getId());
-        MultiPage.mudarTela("carroHome");
+        MultiPage.mudarTela("ordemHome");
         MultiPage.telaCarrosGeral.atualizar();
     }//GEN-LAST:event_excluirBtnActionPerformed
 

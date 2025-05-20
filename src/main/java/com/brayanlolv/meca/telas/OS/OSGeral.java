@@ -177,8 +177,7 @@ public class OSGeral extends javax.swing.JPanel {
     }//GEN-LAST:event_filtrosTabelaTglActionPerformed
 
     private void tabelaServicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaServicosMouseClicked
-        MultiPage.telaOrdemDetalhes.atualizar(dados[tabelaServicos.getSelectedRow()][1]);
-        System.out.println(dados[tabelaServicos.getSelectedRow()][2]);
+        MultiPage.telaOrdemDetalhes.atualizar(dados[tabelaServicos.getSelectedRow()][3]);
         MultiPage.mudarTela("ordemDetalhes");
     }//GEN-LAST:event_tabelaServicosMouseClicked
 

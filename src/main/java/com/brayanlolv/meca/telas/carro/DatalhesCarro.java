@@ -1,6 +1,7 @@
 package com.brayanlolv.meca.telas.carro;
 import com.brayanlolv.meca.telas.cliente.*;
 import com.brayanlolv.meca.model.Carro;
+import com.brayanlolv.meca.model.Cliente;
 import com.brayanlolv.meca.controller.CarroController;
 import com.brayanlolv.meca.telas.MultiPage;
 
@@ -11,16 +12,24 @@ public class DatalhesCarro extends javax.swing.JPanel {
     
     public void atualizar(){
        carro = new CarroController().pegarCarroPor("placa",carroPlaca);
-//        System.out.print("carro pego"+ carro);
         modeloTxt.setText(carro.getModelo());
         placaTxt.setText(carro.getPlaca());
         corTxt.setText(carro.getCor());
         anoTxt.setText(carro.getAno());
         observacoesTxt.setText(carro.getObservacoes());
-//        System.out.println(carroPlaca);
-//        System.out.print(carro == null);
         editarTgl.setSelected(false);
         setEditavel();
+        
+        Cliente cliente = carro.getCliente();
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = {
+                cliente.getNome(), 
+                cliente.getTelefone(),
+                cliente.getEmail()
+            };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
     }
     
     public DatalhesCarro() {
@@ -45,6 +54,9 @@ public class DatalhesCarro extends javax.swing.JPanel {
         voltarBtn = new javax.swing.JButton();
         observacoesTxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel1.setText("modelo");
 
@@ -88,6 +100,20 @@ public class DatalhesCarro extends javax.swing.JPanel {
 
         jLabel5.setText("observacoes");
 
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jLabel6.setText("Cliente");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,7 +147,12 @@ public class DatalhesCarro extends javax.swing.JPanel {
                             .addComponent(editarTgl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(excluirBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(SalvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27))))
+                        .addGap(27, 27, 27))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +187,11 @@ public class DatalhesCarro extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(observacoesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(13, 13, 13)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -196,6 +231,12 @@ public class DatalhesCarro extends javax.swing.JPanel {
         MultiPage.telaCarrosGeral.atualizar();
     }//GEN-LAST:event_excluirBtnActionPerformed
 
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        MultiPage.telaDetalhesCliente.clienteCpf = carro.getCliente().getDocumento();
+        MultiPage.telaDetalhesCliente.atualizar();
+        MultiPage.mudarTela("clienteDetalhes");
+    }//GEN-LAST:event_jList1MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton SalvarBtn;
     private javax.swing.JTextField anoTxt;
@@ -207,6 +248,9 @@ public class DatalhesCarro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField modeloTxt;
     private javax.swing.JTextField observacoesTxt;
     private javax.swing.JTextField placaTxt;

@@ -1,5 +1,6 @@
 com\brayanlolv\meca\dao\CarroDAO.class
 com\brayanlolv\meca\telas\carro\CarroCadastro.class
+com\brayanlolv\meca\telas\OS\OSDetalhes$5.class
 com\brayanlolv\meca\telas\cliente\DatalhesCliente$3.class
 com\brayanlolv\meca\telas\OS\OSGeral.class
 com\brayanlolv\meca\dao\OSDAO.class
@@ -27,9 +28,12 @@ com\brayanlolv\meca\model\Cliente.class
 com\brayanlolv\meca\telas\OS\OSCadastro$2.class
 com\brayanlolv\meca\telas\OS\OSDetalhes$4.class
 com\brayanlolv\meca\telas\carro\DatalhesCarro$4.class
+com\brayanlolv\meca\telas\OS\OSDetalhes$7.class
+com\brayanlolv\meca\telas\carro\DatalhesCarro$7.class
 com\brayanlolv\meca\telas\carro\CarroGeral$6.class
 com\brayanlolv\meca\telas\cliente\ClienteGeral$1.class
 com\brayanlolv\meca\telas\Inicial$2.class
+com\brayanlolv\meca\telas\carro\DatalhesCarro$5.class
 com\brayanlolv\meca\telas\cliente\ClienteCadastro$2.class
 com\brayanlolv\meca\telas\cliente\DatalhesCliente.class
 com\brayanlolv\meca\telas\OS\OSGeral$3.class
@@ -45,9 +49,11 @@ com\brayanlolv\meca\dao\EntityManagerUtil.class
 com\brayanlolv\meca\telas\carro\DatalhesCarro.class
 com\brayanlolv\meca\telas\OS\OSGeral$6.class
 com\brayanlolv\meca\telas\OS\OSDetalhes$3.class
+com\brayanlolv\meca\telas\OS\OSDetalhes$6.class
 com\brayanlolv\meca\controller\OSController.class
 com\brayanlolv\meca\telas\carro\CarroGeral$4.class
 com\brayanlolv\meca\telas\cliente\ClienteGeral$3.class
+com\brayanlolv\meca\telas\carro\DatalhesCarro$6.class
 com\brayanlolv\meca\telas\cliente\DatalhesCliente$4.class
 com\brayanlolv\meca\telas\Inicial$1.class
 com\brayanlolv\meca\telas\OS\OSGeral$7.class

@@ -7,12 +7,37 @@ import com.brayanlolv.meca.model.Cliente;
 import java.util.List;
 public class CarroController {
         
-    public void cadastrar(Carro carro,String documento)throws Exception {
-        Cliente cliente = new ClienteController().pegarClientePor("documento", documento);
-        if (cliente == null ){ throw new Exception("cliente nao encontrado,certifique se dele estar cadastrado");}
-        carro.setCliente(cliente);
-        new CarroDAO().salvar(carro);
+    
+        Cliente cliente;
+    
+    private void checarCampo(String campo)  throws Exception{
+        if (campo == null || campo.isBlank()){
+           throw new Exception("Campos vazios!!!");
         }
+    }
+    
+    
+    
+    public void cadastrar(Carro carro,String documento)throws Exception {
+
+        try{
+            cliente = new ClienteController().pegarClientePor("documento", documento);
+        }catch(Exception e){
+             throw new Exception("cliente nao encontrado,certifique se dele estar cadastrado");
+        }
+        if (cliente == null ){ throw new Exception("cliente nao encontrado,certifique  dele estar cadastrado ou do cpf estar correto");}
+        
+        carro.setCliente(cliente);
+        
+        checarCampo(carro.getPlaca());
+        checarCampo(carro.getAno());
+        checarCampo(carro.getModelo());
+        checarCampo(carro.getCor());
+        
+        new CarroDAO().salvar(carro);
+    
+    
+    }
 //    
      public Carro pegarCarroPor(String campo, String valor){
             return new CarroDAO().findByParam(campo, valor);

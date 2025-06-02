@@ -11,10 +11,13 @@ public class Cliente implements Serializable{
    
    @Column(nullable = false)
    private String nome;
+   
    @Column(nullable = false)
    private String email;
+   
    @Column(nullable = false)
    private String documento; 
+   
    @Column(nullable = false)
    private String telefone;
 

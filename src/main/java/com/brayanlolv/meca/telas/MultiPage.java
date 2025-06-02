@@ -43,6 +43,8 @@ public class MultiPage {
     public MultiPage() {
         frame = new JFrame("Sistema mecanica");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        
         frame.setSize(720, 720);
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);

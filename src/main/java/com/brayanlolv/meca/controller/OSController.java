@@ -7,8 +7,27 @@ import java.util.List;
 
 public class OSController {
     
+     Carro carro;
+     
+    private void checarCampo(String campo)  throws Exception{
+        if (campo == null || campo.isBlank()){
+           throw new Exception("Campos vazios!!!");
+        }
+    }
+    
     public void cadastrar(OS os,String placaCarro) throws Exception{
-        Carro carro = new CarroController().pegarCarroPor("placa", placaCarro);
+        
+        try{
+            carro = new CarroController().pegarCarroPor("placa", placaCarro);
+        }catch(Exception e){
+             throw new Exception("carro nao encontrado, certifique dele estar cadastrado \n e a placa estar certa");
+        }
+        
+        checarCampo(os.getData());
+        checarCampo(os.getTitulo());
+        checarCampo(os.getDescricao());
+        
+        
         if(carro == null){throw new Exception("carro não encontrado, certifique se dele estar cadastrado ou da sua placa estar certa");}
         os.setCarro(carro);
         new OSDAO().salvar(os);

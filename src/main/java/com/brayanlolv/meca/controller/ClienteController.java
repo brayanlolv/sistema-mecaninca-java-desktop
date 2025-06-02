@@ -5,7 +5,22 @@ import java.util.List;
 
 public class ClienteController {
     
-    public void cadastrar(Cliente cliente){
+    private void checarCampo(String campo)  throws Exception{
+        if (campo == null || campo.isBlank()){
+           throw new Exception("Campos vazios!!!");
+        }
+    }
+    
+    
+    public void cadastrar(Cliente cliente)throws Exception{
+        checarCampo(cliente.getNome());
+        checarCampo(cliente.getTelefone());
+        checarCampo(cliente.getEmail());
+        checarCampo(cliente.getDocumento());
+        
+        
+        
+        
         new ClienteDAO().salvar(cliente);
     }
     

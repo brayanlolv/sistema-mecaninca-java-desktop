@@ -30,6 +30,7 @@ public class OSGeral extends javax.swing.JPanel {
         atualizar();
         painelBusca.setVisible(false);
         painelFiltro.setVisible(false);
+        PesquisarTgl.setVisible(false);
    
     }
 
@@ -68,8 +69,10 @@ public class OSGeral extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Carros");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 165, 40));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Ordens de Serviço");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 240, 40));
 
         tabelaServicos.setModel(new javax.swing.table.DefaultTableModel(
             dados,
@@ -84,7 +87,7 @@ public class OSGeral extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tabelaServicos);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 355, 115));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 570, 160));
 
         cadastrarBtn.setText("cadastrar");
         cadastrarBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +95,7 @@ public class OSGeral extends javax.swing.JPanel {
                 cadastrarBtnActionPerformed(evt);
             }
         });
-        add(cadastrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, 30));
+        add(cadastrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 30));
         add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, -10, -1, -1));
 
         PesquisarTgl.setText("pesquisar carros");
@@ -101,7 +104,7 @@ public class OSGeral extends javax.swing.JPanel {
                 PesquisarTglActionPerformed(evt);
             }
         });
-        add(PesquisarTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 170, 30));
+        add(PesquisarTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 170, 30));
 
         filtrosTabelaTgl.setText("Filtros Tabela");
         filtrosTabelaTgl.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +112,7 @@ public class OSGeral extends javax.swing.JPanel {
                 filtrosTabelaTglActionPerformed(evt);
             }
         });
-        add(filtrosTabelaTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 170, 30));
+        add(filtrosTabelaTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 170, 30));
 
         painelBusca.setLayout(null);
 
@@ -137,9 +140,9 @@ public class OSGeral extends javax.swing.JPanel {
         jScrollPane4.setViewportView(clienteBuscadoList1);
 
         painelBusca.add(jScrollPane4);
-        jScrollPane4.setBounds(90, 100, 210, 80);
+        jScrollPane4.setBounds(110, 90, 210, 80);
 
-        add(painelBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 500, 290));
+        add(painelBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 440, 220));
 
         painelFiltro.setLayout(null);
         painelFiltro.add(filtroTxtIpt);
@@ -149,7 +152,7 @@ public class OSGeral extends javax.swing.JPanel {
         painelFiltro.add(filtroSlct);
         filtroSlct.setBounds(280, 10, 72, 22);
 
-        add(painelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 440, 40));
+        add(painelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 440, 40));
 
         menuInical.setText("Menu Inicial");
         menuInical.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +168,11 @@ public class OSGeral extends javax.swing.JPanel {
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 
     private void procurarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarBtn1ActionPerformed
-        System.out.println(PesquisarTgl.isSelected());      
+             clienteBuscadoList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = new OSController().procurarPor("titulo", campoBuscaIpt1.getText());
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i];}
+        }); 
     }//GEN-LAST:event_procurarBtn1ActionPerformed
 
     private void PesquisarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisarTglActionPerformed

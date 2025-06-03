@@ -20,7 +20,7 @@ public class Carro implements Serializable {
    private String ano;
    @Column(nullable = false)
    private String cor;
-   @Column(nullable = false)
+   @Column(nullable = true)
    private String observacoes;
    
     @ManyToOne

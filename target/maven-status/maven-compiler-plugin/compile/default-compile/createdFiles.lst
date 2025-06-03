@@ -1,6 +1,8 @@
+com\brayanlolv\meca\telas\OS\OSGeral$8.class
 com\brayanlolv\meca\dao\CarroDAO.class
 com\brayanlolv\meca\telas\carro\CarroCadastro.class
 com\brayanlolv\meca\telas\OS\OSDetalhes$5.class
+com\brayanlolv\meca\telas\carro\CarroGeral$8.class
 com\brayanlolv\meca\telas\cliente\DatalhesCliente$3.class
 com\brayanlolv\meca\telas\OS\OSGeral.class
 com\brayanlolv\meca\dao\OSDAO.class
@@ -23,6 +25,7 @@ com\brayanlolv\meca\telas\OS\OSDetalhes$1.class
 com\brayanlolv\meca\dao\ClienteDAO.class
 com\brayanlolv\meca\telas\carro\DatalhesCarro$1.class
 com\brayanlolv\meca\telas\cliente\ClienteCadastro$3.class
+com\brayanlolv\meca\telas\cliente\ClienteGeral$8.class
 com\brayanlolv\meca\telas\OS\OSDetalhes.class
 com\brayanlolv\meca\telas\OS\OSGeral$5.class
 com\brayanlolv\meca\model\Cliente.class
@@ -33,6 +36,7 @@ com\brayanlolv\meca\telas\OS\OSDetalhes$7.class
 com\brayanlolv\meca\telas\carro\DatalhesCarro$7.class
 com\brayanlolv\meca\telas\carro\CarroGeral$6.class
 com\brayanlolv\meca\telas\cliente\ClienteGeral$1.class
+com\brayanlolv\meca\Exemplo.class
 com\brayanlolv\meca\telas\Inicial$2.class
 com\brayanlolv\meca\telas\carro\DatalhesCarro$5.class
 com\brayanlolv\meca\telas\cliente\ClienteCadastro$2.class

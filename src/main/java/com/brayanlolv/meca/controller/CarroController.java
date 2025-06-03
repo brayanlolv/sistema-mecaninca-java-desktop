@@ -42,6 +42,13 @@ public class CarroController {
      public Carro pegarCarroPor(String campo, String valor){
             return new CarroDAO().findByParam(campo, valor);
     }
+         public String[] procurarPor(String campo, String valor){
+        Carro carro  = new CarroDAO().findByParam(campo, valor);
+        if(carro == null){
+            return new String[4];
+        }
+        return toStringArray(carro);
+    }
 //     
     public List<Carro> listar(){
         return new CarroDAO().listar();    

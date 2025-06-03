@@ -64,8 +64,10 @@ public class ClienteGeral extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Clientes");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 165, 40));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 165, 40));
 
         tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
             dados,
@@ -80,7 +82,7 @@ public class ClienteGeral extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tabelaClientes);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 355, 115));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 490, 150));
 
         cadastrarBtn.setText("cadastrar");
         cadastrarBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +90,7 @@ public class ClienteGeral extends javax.swing.JPanel {
                 cadastrarBtnActionPerformed(evt);
             }
         });
-        add(cadastrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, 30));
+        add(cadastrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 30));
         add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, -10, -1, -1));
 
         PesquisarTgl.setText("Pesquisar Cliente");
@@ -97,7 +99,7 @@ public class ClienteGeral extends javax.swing.JPanel {
                 PesquisarTglActionPerformed(evt);
             }
         });
-        add(PesquisarTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 170, 30));
+        add(PesquisarTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 170, 30));
 
         filtrosTabelaTgl.setText("Filtros Tabela");
         filtrosTabelaTgl.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +107,7 @@ public class ClienteGeral extends javax.swing.JPanel {
                 filtrosTabelaTglActionPerformed(evt);
             }
         });
-        add(filtrosTabelaTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 170, 30));
+        add(filtrosTabelaTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 170, 30));
 
         painelBusca.setLayout(null);
 
@@ -133,9 +135,9 @@ public class ClienteGeral extends javax.swing.JPanel {
         jScrollPane4.setViewportView(clienteBuscadoList1);
 
         painelBusca.add(jScrollPane4);
-        jScrollPane4.setBounds(90, 100, 210, 80);
+        jScrollPane4.setBounds(110, 100, 210, 80);
 
-        add(painelBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 500, 290));
+        add(painelBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 380, 290));
 
         painelFiltro.setLayout(null);
         painelFiltro.add(filtroTxtIpt);
@@ -145,7 +147,7 @@ public class ClienteGeral extends javax.swing.JPanel {
         painelFiltro.add(filtroSlct);
         filtroSlct.setBounds(280, 10, 72, 22);
 
-        add(painelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 440, 40));
+        add(painelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 440, 40));
 
         jButton1.setText("Menu Inicial");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +155,7 @@ public class ClienteGeral extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
@@ -161,7 +163,12 @@ public class ClienteGeral extends javax.swing.JPanel {
     }//GEN-LAST:event_cadastrarBtnActionPerformed
 
     private void procurarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarBtn1ActionPerformed
-        System.out.println(PesquisarTgl.isSelected());
+        
+        clienteBuscadoList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = new ClienteController().procurarPor("documento", campoBuscaIpt1.getText());
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i];}
+        });
     }//GEN-LAST:event_procurarBtn1ActionPerformed
 
     private void PesquisarTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisarTglActionPerformed
@@ -208,8 +215,6 @@ public class ClienteGeral extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JButton menuInical;
-    private javax.swing.JButton menuInical1;
     private javax.swing.JPanel painelBusca;
     private javax.swing.JPanel painelFiltro;
     private javax.swing.JButton procurarBtn1;
